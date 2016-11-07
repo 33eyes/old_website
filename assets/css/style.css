@@ -1,6 +1,7 @@
 
 body {
-    background-image: url("../img/backgrounds/20161029_073351_crop1.jpg");
-    background-color: #cccccc;
+    background-image: url("../img/backgrounds/purple_dots_bkgd.png"), url("../img/backgrounds/fade_bkgd.png"), url("../img/backgrounds/20161029_073351_crop1.jpg");
+    background-color: #000030;
 	background-size: 100%;
+	background-repeat: repeat, no-repeat, no-repeat;
 }
