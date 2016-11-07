@@ -1,4 +1,6 @@
-
+/***************************************************************
+   GENERAL STYLES 
+****************************************************************/
 body {
     background-image: url("../img/backgrounds/purple_dots_bkgd.png"), url("../img/backgrounds/fade_bkgd.png"), url("../img/backgrounds/20161029_073351_crop1.jpg");
     background-color: #000030;
@@ -7,10 +9,12 @@ body {
 	background-attachment: fixed, scroll, scroll;
 }
 
+// Top offset
 .main-top-margin {
 	margin-top: 10%;
 }
 
+// Custom wells styles
 .well-custom {
 	background-color: rgba(255, 255, 255, 0.7);
 	border-radius: 30px;
@@ -26,3 +30,92 @@ body {
     background-color: rgba(255, 255, 255, 0.7);
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
 }
+
+
+/***************************************************************
+   SOCIAL MEDIA ICONS STYLES
+****************************************************************/
+.color-github {
+    color: #333;
+}
+.color-twitter {
+    color: #00aced;
+}
+.color-google-plus {
+    color: #dd4b39;
+}
+.color-linkedin {
+    color: #007bb6;
+}
+.color-pinterest {
+    color: #cb2027;
+}
+.color-stackex {
+	color: #005999;
+}
+.color-500px {
+	color: #222;
+}
+
+.hackerrank-img {
+	height: 32px;
+}
+
+
+/***************************************************************
+   ABOUT SECTION
+****************************************************************/
+#about-me-section {
+	text-align: center;
+}
+
+// Coder communities list styles
+#coder-communities-list {
+	list-style-type: none;
+	padding: 0;
+    margin-top: 30px;
+    margin-bottom: 0;
+}
+
+#coder-communities-list li {
+	display: inline;
+    margin-right: 1em;
+}
+
+#coder-communities-list img {
+    vertical-align: top;
+}
+
+#coder-communities-list i.fa {
+	font-size: 2.5em;
+}
+
+// Coder communities list link states styles
+#coder-communities-list li a {
+    padding: 5px;
+	text-decoration: none;    
+}
+
+#coder-communities-list li a:link {
+}
+
+#coder-communities-list li a:visited {
+	background-color: rgba(102, 95, 125, 0.7);
+    box-shadow: 1px 1px 10px rgba(102, 95, 125, 0.7);
+    border-radius: 6px;
+}
+
+#coder-communities-list li a:hover {
+	background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.7);
+    border-radius: 6px;
+}
+
+#coder-communities-list li a:active {
+	background-color: rgb(247, 247, 157);
+    box-shadow: 1px 1px 10px rgb(247, 247, 157);
+    border-radius: 6px;
+}
+
+
+
