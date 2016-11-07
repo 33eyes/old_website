@@ -4,4 +4,25 @@ body {
     background-color: #000030;
 	background-size: 100%;
 	background-repeat: repeat, no-repeat, no-repeat;
+	background-attachment: fixed, scroll, scroll;
+}
+
+.main-top-margin {
+	margin-top: 10%;
+}
+
+.well-custom {
+	background-color: rgba(255, 255, 255, 0.7);
+	border-radius: 30px;
+    margin: 0 30px 50px 0;
+	
+    border-width: 3px;
+    border-color: #9a9a9a;
+    box-shadow: 1px 3px 15px rgba(0, 0, 0, 0.5);
+}
+
+.subwell {
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
 }
