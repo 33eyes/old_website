@@ -8,9 +8,9 @@
 		<![endif]-->
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-		<title>test</title>
-		<!-- <link rel="shortcut icon" href="assets/img/favicon-diamond.ico" />
-		-->
+		<title>arigu.me</title>
+		<link rel="shortcut icon" href="assets/img/icons/purple_dots_icon.ico" />
+		
 		
 		
 		<!--BOOTSTRAP CDN -->
@@ -18,6 +18,8 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 		<!--FONTAWESOME -->
 		<script src="https://use.fontawesome.com/238f94aed2.js"></script>
+		<!-- GOOGLE FONTS -->
+		<link href="https://fonts.googleapis.com/css?family=Sniglet" rel="stylesheet">
 		<!--CUSTOM STYLE -->
 		<link href="assets/css/style.css" rel="stylesheet" />
 		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -31,11 +33,13 @@
 			<div class="row">
 				<div class="col-md-5 col-md-offset-1" >
 					<div class="well well-custom" id="about-me-section">
-						<h1>Hi, I'm Arina.</h1>
-						<p>A web developer with an eye for data and design.</p>
+						<h2>Hi, I'm Arina.</h2>
+						<p id="about-me-blurb">A web developer and data wrangler with an eye for design.</p>
 						<ul id="coder-communities-list">
 							<li>
-								<a href="https://github.com/33eyes" target="_blank"><i class="fa fa-github-square fa-3x color-github"></i></a>
+								<a href="https://github.com/33eyes" target="_blank">
+									<i class="fa fa-github-square fa-3x color-github"></i>
+								</a>
 							</li>
 							<li>
 								<a href="http://stackoverflow.com/users/3861922/3eyes?tab=profile" target="_blank">
@@ -43,41 +47,559 @@
 								</a>
 							</li>
 							<li>
-								<a href="https://www.hackerrank.com/ariiigu" target="_blank"><img src="assets/img/icons/h_mark_sm.png" alt="HackerRank" class="hackerrank-img"></a>
+								<a href="https://www.hackerrank.com/ariiigu" target="_blank">
+									<img src="assets/img/icons/h_mark_sm.png" alt="HackerRank" class="hackerrank-img">
+								</a>
+							</li>
+							<li>
+								<a href="https://www.kaggle.com/ariiigu" target="_blank">
+									<img src="assets/img/icons/kaggle-logo-gray-small.png" alt="Kaggle" class="kaggle-img">
+								</a>
+							</li>
+							<li>
+								<a href="http://codepen.io/3eyes/" target="_blank">
+									<img src="assets/img/icons/codepen_logo_small.png" alt="CodePen" class="codepen-img">
+								</a>
 							</li>
 						</ul>
 					</div>
-					<div class="well well-custom">
-						<h1>Hello World 2</h1>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sapien erat, placerat placerat aliquam vel, dignissim et felis. In hac habitasse platea dictumst. Integer non pretium lorem, id viverra elit. Phasellus id magna at augue lobortis finibus. 
-						</p>
-						<div class="well subwell">
-							<p>Donec ullamcorper tincidunt feugiat. Phasellus ac lacinia orci, sed euismod metus. In hac habitasse platea dictumst. Integer sollicitudin consequat odio, egestas commodo lorem posuere nec. Aenean at ex varius, pellentesque eros vitae, suscipit justo. Phasellus id neque ullamcorper, sodales lacus aliquam, varius sapien. Duis fermentum nisi vel ex maximus interdum. Sed sit amet sagittis erat.
-							</p>
+					<div class="well well-custom" id="projects-section">
+						<div class="pulldown" id="pulldown-projects">
+							<div class="pulldown-content">
+								<div class="row" id="projects-filter-top-row">
+									<div class="col-md-6 text-left">
+										<div class="filter-title" id="content-filter-title">TECH USED</div>
+									</div>
+									<div class="col-md-6 text-right">
+										<div class="filter-all" id="content-filter-select-all">ALL</div>
+										<div class="filter-all filter-all-off" id="content-filter-deselect-all">NONE</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-12 text-center">
+										<div id="projects-filter-cloud">
+											<span class="projects-tag tag-cat-frameworks tech-used-ror">Ruby on Rails</span>
+											<span class="projects-tag tag-cat-backend tech-used-php">PHP</span>
+											<span class="projects-tag tag-cat-frontend tech-used-bootstrap">Bootstrap</span>
+											<span class="projects-tag tag-cat-frontend tech-used-css">CSS</span>
+											<span class="projects-tag tag-cat-frontend tech-used-html">HTML</span>
+											<span class="projects-tag tag-cat-frontend tech-used-js">JavaScript</span>
+											<span class="projects-tag tag-cat-frontend tech-used-jquery">JQuery</span>
+											<span class="projects-tag tag-cat-cms tech-used-wordpress">Wordpress</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<span class="pulldown-btn">
+								<i class="fa fa-angle-double-down" aria-hidden="true"></i>
+								<i class="fa fa-angle-double-up" aria-hidden="true"></i>
+							</span>
 						</div>
-						<div class="well subwell">
-							<p>Donec ullamcorper tincidunt feugiat. Phasellus ac lacinia orci, sed euismod metus. In hac habitasse platea dictumst. Integer sollicitudin consequat odio, egestas commodo lorem posuere nec. Aenean at ex varius, pellentesque eros vitae, suscipit justo. Phasellus id neque ullamcorper, sodales lacus aliquam, varius sapien. Duis fermentum nisi vel ex maximus interdum. Sed sit amet sagittis erat.
-							</p>
-						</div>
-						<div class="well subwell">
-							<p>Donec ullamcorper tincidunt feugiat. Phasellus ac lacinia orci, sed euismod metus. In hac habitasse platea dictumst. Integer sollicitudin consequat odio, egestas commodo lorem posuere nec. Aenean at ex varius, pellentesque eros vitae, suscipit justo. Phasellus id neque ullamcorper, sodales lacus aliquam, varius sapien. Duis fermentum nisi vel ex maximus interdum. Sed sit amet sagittis erat.
-							</p>
+						<h2>Some of my projects</h2>
+						<div id="project-cards">
+							<div class="well subwell project-card" id="project-mytmi">
+								<div class="row project-summary">
+									<div class="col-md-4 project-img-container">
+										<img src="assets/img/projects/myTMI/myTMI_logo_116x116.jpeg" alt="project image" />
+									</div>
+									<div class="col-md-8">
+										<h3 class="project-title"><a href="https://github.com/33eyes/lady_problems" target="_blank">myTMI app prototype</a></h3>
+										<p class="project-tagline">Social platform for sharing and 
+											analyzing female sexual health info.</p>
+										<p class="project-tech-used">Tech used:
+											<span class="projects-tag tag-cat-frameworks tech-used-ror">Ruby on Rails</span>,
+											<span class="projects-tag tag-cat-frontend tech-used-bootstrap">Bootstrap</span>,
+											<span class="projects-tag tag-cat-frontend tech-used-css">CSS</span>,
+											<span class="projects-tag tag-cat-frontend tech-used-html">HTML</span>,
+											<span class="projects-tag tag-cat-frontend tech-used-js">JavaScript</span>,
+											<span class="projects-tag tag-cat-frontend tech-used-jquery">JQuery</span>
+										</p>
+									</div>
+								</div>
+								<div class="row project-details">
+									<div class="col-md-12">
+										<div class="project-card-expand-content">
+											<p>
+												<strong><a href="http://www.havenondemand.com/" target="_blank">HPE Haven API</a> 
+												sponsor challenge winner at 
+												<a href="http://ladyproblemshackathon.com/" target="_blank">AngelHack LadyProblems hackathon</a> 
+												2016!</strong>
+											</p>
+											<p>
+												<a href="https://github.com/33eyes/lady_problems" target="_blank">MyTMI app prototype on GitHub</a>
+												<br><br>
+												Our hackathon team and prototype submission can be found <a href="http://www.hackathon.io/mytmi" target="_blank">here</a>.
+											</p>
+										</div>
+										<div class="project-card-expand-btn">
+											<i class="fa fa-angle-double-down" aria-hidden="true"></i>
+											<i class="fa fa-angle-double-up" aria-hidden="true"></i>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="well subwell project-card" id="project-studyme">
+								<div class="row project-summary">
+									<div class="col-md-4 project-img-container">
+										<img src="assets/img/projects/StudyMeScience/beaker-superperson-square-116x116.png" alt="project image" />
+									</div>
+									<div class="col-md-8">
+										<h3 class="project-title"><a href="http://www.studyme.science/" target="_blank">StudyMe.Science app</a></h3>
+										<p class="project-tagline">Connecting volunteers and researchers for scientific studies.</p>
+										<p class="project-tech-used">Tech used:
+											<span class="projects-tag tag-cat-frameworks tech-used-ror">Ruby on Rails</span>,
+											<span class="projects-tag tag-cat-frontend tech-used-bootstrap">Bootstrap</span>,
+											<span class="projects-tag tag-cat-frontend tech-used-css">CSS</span>,
+											<span class="projects-tag tag-cat-frontend tech-used-html">HTML</span>,
+											<span class="projects-tag tag-cat-frontend tech-used-js">JavaScript</span>,
+											<span class="projects-tag tag-cat-frontend tech-used-jquery">JQuery</span>
+										</p>
+									</div>
+								</div>
+								<div class="row project-details">
+									<div class="col-md-12">
+										<div class="project-card-expand-content">
+											<p>Sign up as a volunteer to participate in scientific research studies
+											that match your preferences and schedule. Or sign up as a researcher to find
+											volunteer subjects that match your study's inclusion/exclusion criteria
+											and your schedule.</p>
+										</div>
+										<div class="project-card-expand-btn">
+											<i class="fa fa-angle-double-down" aria-hidden="true"></i>
+											<i class="fa fa-angle-double-up" aria-hidden="true"></i>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="well subwell project-card" id="project-bitspokes">
+								<div class="row project-summary">
+									<div class="col-md-4 project-img-container">
+										<img src="assets/img/projects/BikeTribeApp/three_bike_wheels_with_threads_4_2_small.png" alt="project image" />
+									</div>
+									<div class="col-md-8">
+										<h3 class="project-title"><a href="http://bitSpokes.com" target="_blank">BitSpokes app</a></h3>
+										<p class="project-tagline">Social app for bicyclists</p>
+										<p class="project-tech-used">Tech used:
+											<span class="projects-tag tag-cat-frameworks tech-used-ror">Ruby on Rails</span>,
+											<span class="projects-tag tag-cat-frontend tech-used-bootstrap">Bootstrap</span>,
+											<span class="projects-tag tag-cat-frontend tech-used-css">CSS</span>,
+											<span class="projects-tag tag-cat-frontend tech-used-html">HTML</span>,
+											<span class="projects-tag tag-cat-frontend tech-used-js">JavaScript</span>,
+											<span class="projects-tag tag-cat-frontend tech-used-jquery">JQuery</span>
+										</p>
+									</div>
+								</div>
+								<div class="row project-details">
+									<div class="col-md-12">
+										<div class="project-card-expand-content">
+											<p>
+												<a href="http://bitSpokes.com" target="_blank">BitSpokes</a> is a social app for bicyclists. 
+												Team up with fellow bicycle enthusiasts, 
+												share your biking adventures, swap bike parts, 
+												keep track of your bike inventory, 
+												support your friends, and more!
+												<br><br>
+												<a href="https://github.com/33eyes/bike-tribe" target="_blank">BitSpokes app on GitHub</a>
+											</p>
+										</div>
+										<div class="project-card-expand-btn">
+											<i class="fa fa-angle-double-down" aria-hidden="true"></i>
+											<i class="fa fa-angle-double-up" aria-hidden="true"></i>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!--
+							<div class="well subwell project-card" id="project-bootstraptheme1">
+								<div class="row project-summary">
+									<div class="col-md-4 project-img-container">
+										<img src="assets/img/projects/DeepBlueHairStudio/deep_blue_homepage_116x116.jpg" alt="project image" />
+									</div>
+									<div class="col-md-8">
+										<h3 class="project-title">Bootstrap theme</h3>
+										<p class="project-tagline">Bootstrap theme tag line</p>
+										<p class="project-tech-used">Tech used:
+											<span class="projects-tag tag-cat-frontend tech-used-bootstrap">Bootstrap</span>,
+											<span class="projects-tag tag-cat-frontend tech-used-css">CSS</span>,
+											<span class="projects-tag tag-cat-frontend tech-used-html">HTML</span>,
+											<span class="projects-tag tag-cat-frontend tech-used-js">JavaScript</span>,
+											<span class="projects-tag tag-cat-frontend tech-used-jquery">JQuery</span>
+										</p>
+									</div>
+								</div>
+								<div class="row project-details">
+									<div class="col-md-12">
+										<div class="project-card-expand-content">
+											<p>Project details go here.</p>
+										</div>
+										<div class="project-card-expand-btn">
+											<i class="fa fa-angle-double-down" aria-hidden="true"></i>
+											<i class="fa fa-angle-double-up" aria-hidden="true"></i>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="well subwell project-card" id="project-wptheme1">
+								<div class="row project-summary">
+									<div class="col-md-4 project-img-container">
+										<img src="assets/img/projects/WPthemeYellowOrchid/yellow_orchid_square_116x116.jpg" alt="project image" />
+									</div>
+									<div class="col-md-8">
+										<h3 class="project-title">WordPress theme</h3>
+										<p class="project-tagline">Wordpress theme tag line</p>
+										<p class="project-tech-used">Tech used:
+											<span class="projects-tag tag-cat-cms tech-used-wordpress">Wordpress</span>,
+											<span class="projects-tag tag-cat-frontend tech-used-js">JavaScript</span>,
+											<span class="projects-tag tag-cat-backend tech-used-php">PHP</span>,
+											<span class="projects-tag tag-cat-frontend tech-used-css">CSS</span>,
+											<span class="projects-tag tag-cat-frontend tech-used-html">HTML</span>
+										</p>
+									</div>
+								</div>
+								<div class="row project-details">
+									<div class="col-md-12">
+										<div class="project-card-expand-content">
+											<p>Project details go here.</p>
+										</div>
+										<div class="project-card-expand-btn">
+											<i class="fa fa-angle-double-down" aria-hidden="true"></i>
+											<i class="fa fa-angle-double-up" aria-hidden="true"></i>
+										</div>
+									</div>
+								</div>
+							</div>
+							-->
+							<div class="well subwell project-card" id="project-deepblue">
+								<div class="row project-summary">
+									<div class="col-md-4 project-img-container">
+										<img src="assets/img/projects/DeepBlueHairStudio/deep_blue_homepage_116x116.jpg" alt="project image" />
+									</div>
+									<div class="col-md-8">
+										<h3 class="project-title">Website update</h3>
+										<p class="project-tagline">Wordpress website update for <a href="http://deepbluehairstudio.com" target="_blank">Deep Blue Hair Studio</a></p>
+										<p class="project-tech-used">Tech used:
+											<span class="projects-tag tag-cat-cms tech-used-wordpress">Wordpress</span>,
+											<span class="projects-tag tag-cat-frontend tech-used-js">JavaScript</span>,
+											<span class="projects-tag tag-cat-backend tech-used-php">PHP</span>,
+											<span class="projects-tag tag-cat-frontend tech-used-css">CSS</span>,
+											<span class="projects-tag tag-cat-frontend tech-used-html">HTML</span>
+										</p>
+									</div>
+								</div>
+								<div class="row project-details">
+									<div class="col-md-12">
+										<div class="project-card-expand-content">
+										
+										
+										<div id="carousel-deepblue" class="carousel slide" data-ride="carousel">
+										  <!-- Indicators -->
+										  <ol class="carousel-indicators">
+											<li data-target="#carousel-deepblue" data-slide-to="0" class="active"></li>
+											<li data-target="#carousel-deepblue" data-slide-to="1"></li>
+											<li data-target="#carousel-deepblue" data-slide-to="2"></li>
+											<li data-target="#carousel-deepblue" data-slide-to="3"></li>
+											<li data-target="#carousel-deepblue" data-slide-to="4"></li>
+											<li data-target="#carousel-deepblue" data-slide-to="5"></li>
+											<li data-target="#carousel-deepblue" data-slide-to="6"></li>
+											<li data-target="#carousel-deepblue" data-slide-to="7"></li>
+										  </ol>
+
+										<!-- Wrapper for slides -->
+										<div class="carousel-inner" role="listbox">
+											<div class="item active">
+												<p class="item-text">
+													<a href="http://deepbluehairstudio.com" target="_blank">Deep Blue Hair Studio</a>
+													had a well-designed Wordpress website, 
+													created back in 2013. The website had a great color theme and 
+													brand design, but lacked some key features and layouts that 
+													have become available since 2013. In 2016, the owners of 
+													Deep Blue felt that the website looked old and needed an 
+													update for a more modern look and features, 
+													while retaining the original brand theme and design.
+												</p>
+											</div>
+
+											<div class="item">
+												<h4>Responsive design</h4>
+												<p>Added mobile-friendly responsive design to improve website user experience on mobile devices.</p>
+												<div class="text-center">
+													<div class="select-version updated-version">Updated version</div>
+													<div class="select-version select-version-off before-version">Before update</div>
+												</div>
+												<div class="text-center">
+													<img src="assets/img/projects/DeepBlueHairStudio/snapshots/updated/updated-deepBlueHairStudio-mobile-homepage.png" alt="project image" class="updated-version-img" />
+													<img src="assets/img/projects/DeepBlueHairStudio/snapshots/before-update/old-DeepBlueHairStudio-mobile-homepage.png" alt="project image" class="before-version-img" />
+												</div>
+											</div>
+
+											<div class="item">
+												<h4>Nested navigation menu bar</h4>
+												<p>Added nesting capability to the navigation menu bar.</p>
+												<div class="text-center">
+													<img src="assets/img/projects/DeepBlueHairStudio/snapshots/updated/updated-DeepBlueHairStudio-browser-homepage-nested-navbar2.png" alt="project image" class="project-img-border" />
+												</div>
+											</div>
+
+											<div class="item">  
+												<h4>Scroll-to-top button</h4>
+												<p>Added a custom scroll-to-top button for easier site navigation.</p>
+												<div class="text-center">
+													<img src="assets/img/projects/DeepBlueHairStudio/snapshots/updated/updated-DeepBlueHairStudio-browser-scroll2top-button.png" alt="project image" class="project-img-border" />
+												</div>
+											</div>
+											
+											<div class="item">
+												<h4>Price lists layouts</h4>
+												<p>Updated services price lists with table layouts and custom formatting.</p>
+												<div class="text-center">
+													<div class="select-version updated-version">Updated version</div>
+													<div class="select-version select-version-off before-version">Before update</div>
+												</div>
+												<div class="text-center">
+													<img src="assets/img/projects/DeepBlueHairStudio/snapshots/updated/updated-DeepBlueHairStudio-browser-services-pricelist.png" alt="project image" class="updated-version-img project-img-border" />
+													<img src="assets/img/projects/DeepBlueHairStudio/snapshots/before-update/old-DeepBlueHairStudio-browser-services-pricelist.png" alt="project image" class="before-version-img project-img-border" />
+												</div>
+											</div>
+											
+											<div class="item">
+												<h4>New layout for featured artists gallery</h4>
+												<p>Updated the layout of featured artists gallery page.</p>
+												<div class="text-center">
+													<div class="select-version updated-version">Updated version</div>
+													<div class="select-version select-version-off before-version">Before update</div>
+												</div>
+												<div class="text-center">
+													<img src="assets/img/projects/DeepBlueHairStudio/snapshots/updated/updated-DeepBlueHairStudio-browser-artists.png" alt="project image" class="updated-version-img project-img-border" />
+													<img src="assets/img/projects/DeepBlueHairStudio/snapshots/before-update/old-DeepBlueHairStudio-browser-artists.png" alt="project image" class="before-version-img project-img-border" />
+												</div>
+											</div>
+											
+											<div class="item">
+												<h4>Miscellaneous minor improvements</h4>
+												<ul>
+													<li>Images & copy updates</li>
+													<li>Added favicon to website brand</li>
+													<li>Backup setup</li>
+													<li>Wordpress and plugin version updates</li>
+												</ul>
+											</div>
+											
+											<div class="item">  
+												<h4>Custom content maintenance guide</h4>
+												<p>
+													Created a custom content mainenance step-by-step guide to assist the 
+													business owners in managing the content of their website.
+												</p>
+												<div class="text-center">
+													<img src="assets/img/projects/DeepBlueHairStudio/snapshots/updated/updated-DeepBlueHairStudio-browser-guide.png" alt="project image" class="project-img-border" />
+												</div>
+											</div>
+											
+										</div>
+
+										</div>
+										
+											
+										</div>
+										<div class="project-card-expand-btn">
+											<i class="fa fa-angle-double-down" aria-hidden="true"></i>
+											<i class="fa fa-angle-double-up" aria-hidden="true"></i>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="well subwell project-card" id="project-portfolio">
+								<div class="row project-summary">
+									<div class="col-md-4 project-img-container">
+										<img src="assets/img/projects/MyPortfolioSite/purple_dots_small.png" alt="project image" />
+									</div>
+									<div class="col-md-8">
+										<h3 class="project-title">This site</h3>
+										<p class="project-tagline">
+											Made from scratch.
+											<br>
+											Hosted on GitHub Pages.
+										</p>
+										<p class="project-tech-used">Tech used:
+											<span class="projects-tag tag-cat-frontend tech-used-bootstrap">Bootstrap</span>,
+											<span class="projects-tag tag-cat-frontend tech-used-css">CSS</span>,
+											<span class="projects-tag tag-cat-frontend tech-used-html">HTML</span>,
+											<span class="projects-tag tag-cat-frontend tech-used-js">JavaScript</span>,
+											<span class="projects-tag tag-cat-frontend tech-used-jquery">JQuery</span>
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="hide" id="project-placeholder">
+								<p>Click on some tech terms in the filter above to see matching projects. Or just close the filter to reset.</p>
+							</div>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-5" >
-					<div class="well well-custom">
-						<h1>Hello World 3</h1>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sapien erat, placerat placerat aliquam vel, dignissim et felis. In hac habitasse platea dictumst. Integer non pretium lorem, id viverra elit. Phasellus id magna at augue lobortis finibus. Donec ullamcorper tincidunt feugiat. Phasellus ac lacinia orci, sed euismod metus. In hac habitasse platea dictumst. Integer sollicitudin consequat odio, egestas commodo lorem posuere nec. Aenean at ex varius, pellentesque eros vitae, suscipit justo. Phasellus id neque ullamcorper, sodales lacus aliquam, varius sapien. Duis fermentum nisi vel ex maximus interdum. Sed sit amet sagittis erat.
-
-Curabitur eu tincidunt arcu. Praesent at massa ut massa ullamcorper finibus. Morbi rutrum tincidunt tortor, a porttitor nibh pharetra ut. Vestibulum eget laoreet nunc. Phasellus et ipsum lobortis justo vulputate ultrices. Sed varius nec orci in porttitor. Duis sit amet risus ut dui maximus interdum vitae eget neque. Aliquam id elit egestas sapien mattis elementum et nec urna. Donec malesuada enim volutpat lacus ultrices volutpat. Duis vulputate elit neque, ac pellentesque purus ultrices sit amet. Morbi imperdiet, dui at sodales ultricies, elit urna porta quam, in mattis magna nibh ac turpis.</p>
+					<div class="well well-custom" id="skills-section">
+						<div class="cloud" id="skills" >
+							<div class="pulldown" id="pulldown-skills">
+								<div class="pulldown-content">
+									<div class="filter-box filter-by-color" id="tech-area-filter">
+										<div class="skills tag-cloud">
+											<p>
+												<i class="fa fa-square fa-1x tag-cat tag-cat-frameworks"></i>
+												<i class="fa fa-square fa-1x tag-cat tag-cat-backend"></i>
+												<i class="fa fa-square fa-1x tag-cat tag-cat-frontend"></i>
+												<i class="fa fa-square fa-1x tag-cat tag-cat-vcontrol"></i>
+												<i class="fa fa-square fa-1x tag-cat tag-cat-concepts"></i>
+												<i class="fa fa-square fa-1x tag-cat tag-cat-datamgmt"></i>
+												<i class="fa fa-square fa-1x tag-cat tag-cat-analysis"></i>
+												<i class="fa fa-square fa-1x tag-cat tag-cat-cms"></i>
+											</p>
+										</div>
+										<div class="filter-title-box">
+											<span class="skills prefix">
+												<span class="tag-cat tag-cat-frameworks">FRAMEWORKS</span>
+												<span class="tag-cat tag-cat-backend">BACK-END</span>
+												<span class="tag-cat tag-cat-frontend">FRONT-END</span>
+												<span class="tag-cat tag-cat-vcontrol">VERSION CONTROL</span>
+												<span class="tag-cat tag-cat-concepts">CODE CONCEPTS</span>
+												<span class="tag-cat tag-cat-datamgmt">DATA MANAGEMENT</span>
+												<span class="tag-cat tag-cat-analysis">ANALYSIS</span>
+												<span class="tag-cat tag-cat-cms">CMS</span>
+											</span>
+											
+											<span id="tech-area-filter-title" class="skills filter-title">SKILLS</span>
+										</div>
+									</div>
+									<div class="filter-box filter-by-size" id="experience-filter">
+										<div class="skills tag-cloud">
+											<p>
+												<i class="fa fa-square fa-1x tag-cat tag-cat-small"></i>
+												<i class="fa fa-square fa-1x tag-cat tag-cat-medium"></i>
+												<i class="fa fa-square fa-1x tag-cat tag-cat-large"></i>
+											</p>
+										</div>
+										<div class="filter-title-box">
+											<span class="skills prefix">
+												<span class="tag-cat tag-cat-small">BEGINNER</span>
+												<span class="tag-cat tag-cat-medium">PROFICIENT</span>
+												<span class="tag-cat tag-cat-large">EXPERT</span>
+											</span>
+											
+											<span id="experience-filter-title" class="skills filter-title">EXPERIENCE</span>
+										</div>
+									</div>
+								</div>
+								<span class="pulldown-btn">
+									<i class="fa fa-angle-double-down" aria-hidden="true"></i>
+									<i class="fa fa-angle-double-up" aria-hidden="true"></i>
+								</span>
+							</div>
+							<h2>I work with</h2>
+			
+							<div class="skills tag-cloud">	
+								<!-- Frameworks tags -->
+								<a href="https://en.wikipedia.org/wiki/Ruby_on_Rails" target="_blank" class="tag-cat tag-cat-frameworks tag-size-7">Ruby on Rails</a>
+								
+								<!-- Back-end tags -->
+								<a href="https://en.wikipedia.org/wiki/Command-line_interface" target="_blank" class="tag-cat tag-cat-backend tag-size-7">Command-line</a>
+								<a href="https://en.wikipedia.org/wiki/PHP" target="_blank" class="tag-cat tag-cat-backend tag-size-7">PHP</a>
+								<a href="https://en.wikipedia.org/wiki/Ruby_(programming_language)" target="_blank" class="tag-cat tag-cat-backend tag-size-7">Ruby</a>
+								<a href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank" class="tag-cat tag-cat-backend tag-size-3">Python</a>
+								<a href="https://en.wikipedia.org/wiki/SQL" target="_blank" class="tag-cat tag-cat-backend tag-size-7">SQL</a>
+								
+								<!-- Front-end tags -->
+								<a href="https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework)" target="_blank" class="tag-cat tag-cat-frontend tag-size-7">Bootstrap</a>
+								<a href="https://en.wikipedia.org/wiki/Cascading_Style_Sheets" target="_blank" class="tag-cat tag-cat-frontend tag-size-8">CSS</a>
+								<a href="https://en.wikipedia.org/wiki/HTML" target="_blank" class="tag-cat tag-cat-frontend tag-size-9">HTML</a>
+								<a href="https://en.wikipedia.org/wiki/JavaScript" target="_blank" class="tag-cat tag-cat-frontend tag-size-7">JavaScript</a>
+								<a href="https://en.wikipedia.org/wiki/JQuery" target="_blank" class="tag-cat tag-cat-frontend tag-size-7">JQuery</a>
+								
+								<!-- Version control tags -->
+								<a href="https://en.wikipedia.org/wiki/Git_(software)" target="_blank" class="tag-cat tag-cat-vcontrol tag-size-8">Git</a>
+								
+								<!-- Programming concepts tags -->
+								<a href="https://en.wikipedia.org/wiki/Test-driven_development" target="_blank" class="tag-cat tag-cat-concepts tag-size-8">TDD</a>
+								
+								<!-- Data management tags -->
+								<a href="https://en.wikipedia.org/wiki/SAS_language" target="_blank" class="tag-cat tag-cat-datamgmt tag-size-10">SAS</a>
+								<a href="https://en.wikipedia.org/wiki/SQL" target="_blank" class="tag-cat tag-cat-datamgmt tag-size-7">SQL</a>
+								
+								<!-- Analysis tags -->
+								<a href="https://en.wikipedia.org/wiki/R_(programming_language)" target="_blank" class="tag-cat tag-cat-analysis tag-size-4">R</a>
+								<a href="https://en.wikipedia.org/wiki/SAS_language" target="_blank" class="tag-cat tag-cat-analysis tag-size-7">SAS</a>
+								
+								<!-- CMS tags -->
+								<a href="https://wordpress.org/" target="_blank" class="tag-cat tag-cat-cms tag-size-9">Wordpress</a>
+							</div>
+						</div>       
 					</div>
-					<div class="well well-custom">
-						<h1>Hello World 4</h1>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sapien erat, placerat placerat aliquam vel, dignissim et felis. In hac habitasse platea dictumst. Integer non pretium lorem, id viverra elit. Phasellus id magna at augue lobortis finibus. Donec ullamcorper tincidunt feugiat. Phasellus ac lacinia orci, sed euismod metus.</p>
+					<div class="well well-custom" id="contact-me-section">
+						<h2>Connect with me</h2>
+						<ul id="prof-networks-list">
+							<li>
+								<a href="https://www.linkedin.com/in/arina-i-9332577" target="_blank"><i class="fa fa-linkedin-square fa-3x color-linkedin"></i></a>
+							</li>
+						</ul>
+						
+						<div id="send-message">
+							<h3>Send me a note</h3>
+							<form action="https://formspree.io/ariiigu@gmail.com" method="POST">
+								<input type="text" name="_gotcha" style="display:none;" />
+								<div class="row">
+									<div class="col-md-6 left">
+										<div class="form-group" id="message-box">
+											<textarea name="message" id="message" required="required" class="form-control" rows="3"  placeholder="Message"></textarea>
+										</div>
+									</div>
+									<div class="col-md-6 right">
+										<div class="form-group" id="sender-name">
+											<input type="text" class="form-control" required="required" placeholder="Name">
+										</div>
+										<div class="form-group" id="sender-email">
+											<input type="email" class="form-control" required="required" placeholder="Email address" name="_replyto">
+										</div>
+										<div class="form-group" id="send-button">
+											<button type="submit" class="btn btn-send">Send</button>
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+		
+		<!--FOOTER SECTION -->
+		<div class="text-center" id="footer"> 
+			<p>
+				Copyright 
+				<i class="fa fa-copyright" aria-hidden="true"></i> 
+				2016
+				<script>
+					new Date().getFullYear()>2016&&document.write("- "+new Date().getFullYear());
+				</script> 
+				arigu.me | All Rights Reserved
+			</p>
+		</div>
+		<!--END FOOTER SECTION --> 
+	
+	
+		<!-- SCROLL-TO-TOP BUTTON -->
+		<a href="#" class="go-top" style="display: none;"><i class="fa fa-arrow-circle-up fa-3x"></i></a>
+
+		
+		<!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
+		<!-- CORE JQUERY LIBRARY -->
+		<script src="assets/js/jquery.js"></script>
+
+		<!-- CORE BOOTSTRAP LIBRARY -->
+		<!--<script src="assets/js/bootstrap.min.js"></script>-->
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		
+		<!-- PARALLAX SCRIPTS-->
+		<script src="assets/js/scrolly-master/jquery.scrolly.js"></script>
+		<!-- CUSTOM SCRIPT-->  
+		<script src="assets/js/custom.js"></script>
 	</body>
 </html>
