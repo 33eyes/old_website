@@ -113,8 +113,13 @@ a.pulldown-btn:focus, a.pulldown-btn:hover {
 
 /* General filter selection buttons styles */
 .tag-cloud i {
-    margin: 0.3em;
+    margin: 0.2em;
 	cursor: pointer;
+}
+@media only screen and (max-device-width: 480px) {
+	.tag-cloud i {
+		margin: 0.4em;
+	}
 }
 i.tag-cat {
 	text-shadow: 1px 1px 10px rgba(255, 255, 255, 0.7);
@@ -305,6 +310,10 @@ div.cloud div.tag-cloud {
     color: #658efd;
 }
 
+.tag-cat-graphics {
+    color: #008247;
+}
+
 
 /***************************************************************
    PROJECTS SECTION
@@ -378,8 +387,15 @@ div.cloud div.tag-cloud {
     background-color: white;
     box-shadow: 1px 3px 15px rgb(255, 255, 255);
 }
-.project-img-container {
-    padding-right: 5px;
+@media (min-width: 992px) {
+	.project-img-container {
+		padding-right: 5px;
+	}
+}
+@media only screen and (max-device-width : 991px) {
+	.project-img-container {
+		margin-bottom: 10px;
+	}
 }
 .project-summary img {
 	width: 100%;
