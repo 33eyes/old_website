@@ -19,7 +19,6 @@ h2 {
 
 a, a:focus, a:hover {
     color: #713aa9;
-//	text-decoration: none;
 }
 
 
@@ -41,11 +40,15 @@ body {
 .well-custom {
 	background-color: rgba(255, 255, 255, 0.7);
 	border-radius: 30px;
-    margin: 0 30px 50px 0;
 	
     border-width: 0px;
     border-color: #9a9a9a;
     box-shadow: 1px 3px 15px rgba(0, 0, 0, 0.5);
+}
+@media (min-width: 992px) {
+	.well-custom {
+		margin: 0 30px 50px 0;
+	}
 }
 .subwell {
     border-radius: 10px;
@@ -104,7 +107,7 @@ a.pulldown-btn:focus, a.pulldown-btn:hover {
 /* Filter box size for mobile */
 @media only screen and (max-device-width: 480px) {
 	.filter-box {
-	    width: 100px;
+	    width: 150px;
 	}
 	.filter-title-box {
 		max-height: none;
@@ -240,7 +243,11 @@ div.cloud div.tag-cloud {
 }
 #coder-communities-list li {
 	display: inline;
-    margin-right: 1em;
+}
+@media (min-width: 992px) {
+	#coder-communities-list li {
+		margin-right: 1em;
+	}
 }
 #coder-communities-list img {
     vertical-align: top;
@@ -412,6 +419,12 @@ div.cloud div.tag-cloud {
     margin-bottom: 0;
 }
 
+@media only screen and (max-device-width : 991px) {
+	.project-summary-txt-container {
+		margin: 10px;
+	}
+}
+
 /* Project-card-expand content section styles */
 .project-card-expand-content {
 	display: none;
@@ -448,6 +461,12 @@ div.cloud div.tag-cloud {
 	border-radius: 6px;
 	margin-bottom: 10px;
 }
+@media only screen and (max-device-width : 991px) {
+	.carousel .carousel-inner .item img {
+		max-width: 200px;
+	}
+}
+
 .carousel .carousel-inner .item img.project-img-border {
 	box-shadow: 1px 1px 10px rgba(76, 76, 109, 0.6);
 }
@@ -494,7 +513,7 @@ div.cloud div.tag-cloud {
 }
 
 /* Website update for Deep Blue Hair Studio */
-#carousel-deepblue {
+div.carousel {
     padding: 10px;
     border-radius: 8px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
@@ -556,12 +575,22 @@ div.cloud div.tag-cloud {
 #send-message h3 {
     margin-top: 5px;
 }
-#send-message .col-md-6.left {
-    padding-right: 3px;
+
+@media (min-width: 992px) {
+	#send-message .col-md-6.left {
+		padding-right: 3px;
+	}
+	#send-message .col-md-6.right {
+		padding-left: 3px;
+	}
 }
-#send-message .col-md-6.right {
-    padding-left: 3px;
+@media only screen and (max-device-width : 991px) {
+	#send-message .col-md-6.left {
+		margin-bottom: 10px;
+	}
 }
+
+
 #send-message .form-control {
 	border-radius: 10px;
 	background-color: #e8e8ec;
@@ -622,6 +651,15 @@ div.cloud div.tag-cloud {
     padding: 10px;
     display: none;
     margin: 0;
+}
+@media only screen and (max-device-width : 991px) {
+	.go-top {    
+		right: 0.5em;
+		bottom: 0.5em;
+	}
+	.go-top i {
+		font-size: 2em;
+	}
 }
 
 .go-top:hover {
