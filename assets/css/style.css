@@ -105,7 +105,7 @@ a.pulldown-btn:focus, a.pulldown-btn:hover {
     max-height: 24px;
 }
 /* Filter box size for mobile */
-@media only screen and (max-device-width: 480px) {
+@media only screen and (max-device-width: 992px) {
 	.filter-box {
 	    width: 150px;
 	}
