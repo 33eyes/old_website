@@ -385,9 +385,9 @@ jQuery(function($) {
 			} 
 		});
 		
-		console.log("techFiltersList: " + techFiltersList);
-		console.log("checkIfAnyOn: " + checkIfAnyOn);
-		console.log("checkIfAnyOff: " + checkIfAnyOff);
+		//console.log("techFiltersList: " + techFiltersList);
+		//console.log("checkIfAnyOn: " + checkIfAnyOn);
+		//console.log("checkIfAnyOff: " + checkIfAnyOff);
 		
 		// Turn on or off the 'all' or 'none' buttons as appropriate
 		if (checkIfAnyOn === checkIfAnyOff) {
@@ -503,7 +503,8 @@ jQuery(function($) {
 		$("#project-placeholder").addClass("hide");
 	});
 	
-
+	
+	
 	/* *************************************************************
     PROJECT CARDS EXPAND TABS
 	****************************************************************/
@@ -518,9 +519,11 @@ jQuery(function($) {
 		$(this).find(".fa-angle-double-up").toggle();
 		
 		$(this).closest(".project-card").toggleClass("expanded-project-card");
+		
+		$(this).siblings("div.project-card-expand-content").find(".carousel").carousel(0); 
 	});
-	
-	
+
+
 	/* *************************************************************
     PROJECT CARDS CONTENT - BEFORE and AFTER buttons
 	****************************************************************/

@@ -68,6 +68,8 @@ div.pulldown {
     box-shadow: 1px 3px 15px rgba(0, 0, 0, 0.5);
     margin: 0 5%;
     margin-top: -19px;
+	border: 2px solid #a89faf;
+	border-top: none;
 }
 /* Pull-down arrow toggle button styles */
 .pulldown-btn:hover, .pulldown-btn:focus {
@@ -90,7 +92,7 @@ a.pulldown-btn:focus, a.pulldown-btn:hover {
 
 /* General filters styles */
 .filter-box {
-    border: 2px solid rgb(128, 128, 128);
+	border: 2px solid rgba(121, 114, 128, 0.7);
     margin: 0;
     border-radius: 5px;
     box-shadow: 1px 3px 15px rgba(162, 162, 162, 0.34);
@@ -98,7 +100,7 @@ a.pulldown-btn:focus, a.pulldown-btn:hover {
     display: inline-block;
 }
 .filter-title-box {
-    border: 2px solid grey;
+	border: 2px solid rgba(121, 114, 128, 0.7);
     background-color: #0b0f3c;
     border-radius: 4px;
     text-shadow: 0px 0px 20px #9446dc;
@@ -289,6 +291,7 @@ div.cloud div.tag-cloud {
 
 #experience-filter {
     width: 100px;
+	margin-top: 6px;
 }
 
 /* SKILLS color filter colors */
@@ -353,7 +356,7 @@ div.cloud div.tag-cloud {
     display: inline-block;
 }
 #projects-filter-top-row .filter-title {
-    border: 2px solid grey;
+	border: 2px solid rgba(121, 114, 128, 0.7);
     background-color: #1f0035;
     border-radius: 4px;
     text-shadow: 0px 0px 20px #9446dc;
@@ -449,10 +452,17 @@ div.cloud div.tag-cloud {
 .carousel .carousel-inner .item h4 {
     color: #4c4c6d;
     font-weight: bold;
+	margin-top: 0;
 }
+.carousel .carousel-inner .item p {
+	font-size: 12px;
+}
+.carousel .carousel-inner .item ul li {
+	font-size: 12px;
+}
+
 .carousel .carousel-inner .item p.item-text {
     text-align: justify;
-    margin: 10px;
     border: 1px solid rgba(0, 0, 47, 0.21);
     border-radius: 8px;
     padding: 10px;
@@ -506,18 +516,31 @@ div.cloud div.tag-cloud {
     text-shadow: none;
 }
 
-/* Project-specific styles */
-/* myTMI app project */
-#project-mytmi .project-summary img {
-    border: 2px solid #65158c;
-}
-
-/* Website update for Deep Blue Hair Studio */
 div.carousel {
     padding: 10px;
     border-radius: 8px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
     min-height: 400px;
+}
+
+/* Project-specific styles */
+/* myTMI app project */
+#project-mytmi .project-summary img {
+    border: 2px solid #65158c;
+}
+#project-mytmi #carousel-mytmi .carousel-inner {
+    height: 610px;
+}
+
+/* Website update for Deep Blue Hair Studio */
+#project-deepblue #carousel-deepblue .carousel-inner {
+    height: 610px;
+}
+#project-deepblue #carousel-deepblue .carousel-inner .item img {
+	width: 95%;
+}
+#project-deepblue #carousel-deepblue .carousel-inner .item img.project-img-border {
+    box-shadow: 1px 1px 3px rgba(76, 76, 109, 0.4);
 }
 
 
@@ -568,7 +591,7 @@ div.carousel {
 
 /* Email contact form styles */
 #send-message {
-    border: 2px solid grey;
+	border: 2px solid rgba(121, 114, 128, 0.7);
     padding: 5px;
     border-radius: 10px;
 }
@@ -576,6 +599,10 @@ div.carousel {
     margin-top: 5px;
 }
 
+#send-message .col-md-6.left, #send-message .col-md-6.right {
+	margin-top: 8px;
+}
+	
 @media (min-width: 992px) {
 	#send-message .col-md-6.left {
 		padding-right: 3px;
@@ -584,11 +611,7 @@ div.carousel {
 		padding-left: 3px;
 	}
 }
-@media only screen and (max-device-width : 991px) {
-	#send-message .col-md-6.left {
-		margin-bottom: 10px;
-	}
-}
+
 
 
 #send-message .form-control {
