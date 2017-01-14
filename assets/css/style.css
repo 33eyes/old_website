@@ -538,11 +538,14 @@ div.carousel {
 }
 #project-deepblue #carousel-deepblue .carousel-inner .item img {
 	width: 95%;
+	max-width: 242px;
 }
 #project-deepblue #carousel-deepblue .carousel-inner .item img.project-img-border {
     box-shadow: 1px 1px 3px rgba(76, 76, 109, 0.4);
 }
-
+#project-deepblue #carousel-deepblue p.item-text {
+	font-size: 14px;
+}
 
 /***************************************************************
    CONTACT-ME SECTION
