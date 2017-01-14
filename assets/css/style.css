@@ -524,6 +524,20 @@ div.carousel {
 }
 
 /* Project-specific styles */
+
+/* NB1216 project: Wordpress portfolio */
+#project-nb1216 .project-img-container img {
+	border: 1px solid #ccc;
+}
+#project-nb1216 #carousel-nb1216 .carousel-inner .item img {
+	width: 95%;
+	max-width: 320px;
+	box-shadow: 0px 0px 15px rgba(128, 128, 128, 0.2);
+}
+#project-nb1216 #carousel-nb1216 .carousel-inner {
+    height: 550px;
+}
+
 /* myTMI app project */
 #project-mytmi .project-summary img {
     border: 2px solid #65158c;
