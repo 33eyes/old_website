@@ -69,256 +69,130 @@ jQuery(function($) {
 		$(".tag-size-9").addClass("tag-cat-large");
 		$(".tag-size-10").addClass("tag-cat-large");
 	});
+
 	
-	// TAG CLOUD FILTERING BY CATEGORY
-    var cloudid;
-	var filterid;
-	var colorFiltersList = [];
-	var sizeFiltersList = [];
-	
-    $(".tag-cloud .fa-square").click(function(){
-		// Check that filter button is available for selection
-		if ( !($(this).hasClass("not-available")) ) {
-			// Get the tag-cat- class on this element
-			var classes = $(this).attr('class').split(' ');
-			for (var i = 0; i < classes.length; i++) {
-				var matches = /^tag\-cat\-(.+)/.exec(classes[i]);
-				if (matches != null) {
-					var tagcatclass = matches[1];
-				}
-			}
-			
-			// Get the id of the cloud class parent of this element
-			cloudid = $(this).closest(".cloud").attr("id");
-			
-			// Get the id of the filter-box class parent of this element
-			filterid = $(this).closest(".filter-box").attr("id");
-			
-			// Update the filter boxes
-			if ( $(this).closest(".filter-box").hasClass("filter-by-color") ) {
-				if ($(this).hasClass("filter-sel-off") || colorFiltersList.length === 0) {
-					// If this filter selection was deselected before clicking, OR
-					// if nothing/everything was selected before clicking...
-					
-					// Mark only this filter button as selected in this filter group
-					$("#"+filterid+" .tag-cloud."+cloudid+" .fa-square").addClass("filter-sel-off");
-					$(this).removeClass("filter-sel-off");
-					
-					// Show tag prefix in the section title
-					$("#"+filterid+" ."+cloudid+".prefix .tag-cat").hide(0);
-					$("#"+filterid+"-title").hide(0);
-					$("#"+filterid+" ."+cloudid+".prefix .tag-cat-"+tagcatclass).show(0);
-				} else {
-					// If this filter selection was selected before clicking...
-					
-					// Mark all filter buttons as selected in this filter group
-					$("#"+filterid+" .tag-cloud."+cloudid+" .fa-square").removeClass("filter-sel-off");
-					
-					// Show tag prefix in the section title
-					$("#"+filterid+" ."+cloudid+".prefix .tag-cat").hide(0);
-					$("#"+filterid+"-title").show(0);
-					
-					// Remove any NA classes on filter options from the size filter
-					$(".filter-by-size .tag-cloud."+cloudid+" .fa-square").removeClass("not-available");
-				}
-				
-				// Gather filter selections in the color filter box
-				// Reset the colorFiltersList
-				colorFiltersList = [];
-				$('.filter-by-color .filter-sel-off').each(function(){
-					// Get the tag-cat- class of each filter-sel-off class element
-					var filterClasses = $(this).attr('class').split(' ');
-					for (var i = 0; i < filterClasses.length; i++) {
-						var filterMatches = /^tag\-cat\-(.+)/.exec(filterClasses[i]);
-						if (filterMatches != null) {
-							var filtertagcatclass = filterMatches[1];
-						}
-					}
-					// Add the matched tag-cat- class to colorFiltersList
-					colorFiltersList.push(filtertagcatclass);
-				});
-			} else if ( $(this).closest(".filter-box").hasClass("filter-by-size") ) {
-				if ($(this).hasClass("filter-sel-off") || sizeFiltersList.length === 0) {
-					// If this filter selection was deselected before clicking, OR
-					// if nothing/everything was selected before clicking...
-					
-					// Mark only this filter button as selected in this filter group
-					$("#"+filterid+" .tag-cloud."+cloudid+" .fa-square").addClass("filter-sel-off");
-					$(this).removeClass("filter-sel-off");
-					
-					// Show tag prefix in the section title
-					$("#"+filterid+" ."+cloudid+".prefix .tag-cat").hide(0);
-					$("#"+filterid+"-title").hide(0);
-					$("#"+filterid+" ."+cloudid+".prefix .tag-cat-"+tagcatclass).show(0);
-				
-				} else {
-					// If this filter selection was selected before clicking...
-					
-					// Mark all filter buttons as selected in this filter group
-					$("#"+filterid+" .tag-cloud."+cloudid+" .fa-square").removeClass("filter-sel-off");
-					
-					// Show tag prefix in the section title
-					$("#"+filterid+" ."+cloudid+".prefix .tag-cat").hide(0);
-					$("#"+filterid+"-title").show(0);
-					
-					// Remove any NA classes on filter options from the color filter
-					$(".filter-by-color .tag-cloud."+cloudid+" .fa-square").removeClass("not-available");
-				}
-				
-				// Gather filter selections in the size filter box
-				// Reset the sizeFiltersList
-				sizeFiltersList = [];
-				$('.filter-by-size .filter-sel-off').each(function(){
-					// Get the tag-cat- class of each filter-sel-off class element
-					var filterClasses = $(this).attr('class').split(' ');
-					for (var i = 0; i < filterClasses.length; i++) {
-						var filterMatches = /^tag\-cat\-(.+)/.exec(filterClasses[i]);
-						if (filterMatches != null) {
-							var filtertagcatclass = filterMatches[1];
-						}
-					}
-					// Add the matched tag-cat- class to sizeFiltersList
-					sizeFiltersList.push(filtertagcatclass);
+	var TechFiltersList = [];
+	var ExpFiltersList = [];
+    $(".filter-box ul li label").click(function(){
+		var filterid = $(this).closest(".filter-box").prop("id");
+		if ( filterid === "tech-area-filter" ) {
+			// Update a list of tech values to filter out
+			var techvalue = $(this).find('input:checkbox').val();
+			if ( $(this).find('input:checkbox').is(':checked') ) { 
+				TechFiltersList = jQuery.grep(TechFiltersList, function(value) {
+					return value != techvalue;
 				});
 			} else {
-				console.log("OOPS!: need to add filter type to a filter box somewhere.");
+				TechFiltersList.push(techvalue);
 			}
-
-			
-			// Hide tag cloud tags that match the colorFiltersList or sizeFiltersList, and show those that don't.
-			$(".tag-cloud."+cloudid+" a.tag-cat").each(function(){
-				var inFiltered;
-				var i;
-				for (i = 0; i < colorFiltersList.length; ++i) {
-					// Check if a tag cloud tag is in colorFiltersList
-					if ( $(this).hasClass("tag-cat-"+colorFiltersList[i]) ) {
-						inFiltered = 1;
-					}
-				}
-				var j;
-				for (j = 0; j < sizeFiltersList.length; ++j) {
-					// Check if a tag cloud tag is in sizeFiltersList
-					if ( $(this).hasClass("tag-cat-"+sizeFiltersList[j]) ) {
-						inFiltered = 1;
-					}
-				}
-				if (inFiltered === 1) {
-					$(this).hide("fast");
-				} else {
-					$(this).show();
-				}
-			});
-			
-			// Turn off filter buttons that become unavailable based on current selection
-			// Look at color filter selections, and gather a list of size filter selections that should stay on
-			var sizeTagsAvailable = [];
-			if ( colorFiltersList.length != 0 ) {
-				// Go through all tags that match the selection in current filter
-				// and mark any unavailable options in the 2nd filter.
-				$(".tag-cloud."+cloudid+" a.tag-cat.tag-cat-"+tagcatclass).each(function(){
-					// Make a list of all tag-cat- classes of shown tags in the cloud
-					// Get the tag-cat- class of the shown tag
-					var tagClasses = $(this).attr('class').split(' ');
-					for (var i = 0; i < tagClasses.length; i++) {
-						var tagMatches = /^tag\-cat\-(.+)/.exec(tagClasses[i]);
-						
-						if (tagMatches != null) {
-							if (tagMatches[1] === "small" || tagMatches[1] === "medium" || tagMatches[1] === "large") {
-								var tagcatclassSize = tagMatches[1];
-								// Add the matched tag-cat- class 
-								sizeTagsAvailable.push(tagcatclassSize);
-							}
-						}
-					}
+		} else if ( filterid === "experience-filter" ) {
+			// Update a list of experience values to filter out
+			var expvalue = $(this).find('input:checkbox').val();
+			if ( $(this).find('input:checkbox').is(':checked') ) { 
+				ExpFiltersList = jQuery.grep(ExpFiltersList, function(value) {
+					return value != expvalue;
 				});
+			} else {
+				ExpFiltersList.push(expvalue);
 			}
-			// Look at size filter selections, and gather a list of color filter selections that should stay on
-			var colorTagsAvailable = [];
-			if ( sizeFiltersList.length != 0 ) {
-				// Go through all tags that match the selection in current filter
-				// and mark any unavailable options in the 2nd filter.
-				$(".tag-cloud."+cloudid+" a.tag-cat.tag-cat-"+tagcatclass).each(function(){
-					// Make a list of all tag-cat- classes of shown tags in the cloud
-					// Get the tag-cat- class of the shown tag
-					var tagClasses = $(this).attr('class').split(' ');
-					for (var i = 0; i < tagClasses.length; i++) {
-						var tagMatches = /^tag\-cat\-(.+)/.exec(tagClasses[i]);
-						
-						if (tagMatches != null) {
-							if ( !(tagMatches[1] === "small" || tagMatches[1] === "medium" || tagMatches[1] === "large") ) {
-								var tagcatclassColor = tagMatches[1];
-								// Add the matched tag-cat- class 
-								colorTagsAvailable.push(tagcatclassColor);
-							}
-						}
-					}
-				});
-			}
-			
-			if ( $(this).closest(".filter-box").hasClass("filter-by-color") && colorFiltersList.length != 0 ) {
-				// Go through the size filter buttons, and turn off those that aren't on the sizeTagsAvailable list
-				$(".filter-by-size .tag-cloud."+cloudid+" .fa-square").each(function(){ 
-					var inTagCloudSize;
-					var i;
-					for (i = 0; i < sizeTagsAvailable.length; ++i) {
-						// Check if a tag cloud tag is in sizeTagsAvailable
-						if ( $(this).hasClass("tag-cat-"+sizeTagsAvailable[i]) ) {
-							inTagCloudSize = 1;
-						}
-					}
-					
-					if (inTagCloudSize != 1) {
-						$(this).addClass("not-available");
-					} else {
-						$(this).removeClass("not-available");
-					}
-				});
-			} else if ( $(this).closest(".filter-box").hasClass("filter-by-size") && sizeFiltersList.length != 0 ) {
-				// Go through the color filter buttons, and turn off those that aren't on the colorTagsAvailable list
-				$(".filter-by-color .tag-cloud."+cloudid+" .fa-square").each(function(){ 
-					var inTagCloudColor;
-					var i;
-					for (i = 0; i < colorTagsAvailable.length; ++i) {
-						// Check if a tag cloud tag is in colorTagsAvailable
-						if ( $(this).hasClass("tag-cat-"+colorTagsAvailable[i]) ) {
-							inTagCloudColor = 1;
-						}
-					}
-					
-					if (inTagCloudColor != 1) {
-						$(this).addClass("not-available");
-					} else {
-						$(this).removeClass("not-available");
-					}
-				});
-			} else if ( colorFiltersList.length === 0 && sizeFiltersList.length === 0 ) {
-				$(".tag-cloud."+cloudid+" .fa-square").removeClass("not-available");
-			}
-			
 		}
+	
+		// Hide tag cloud tags that match the ExpFiltersList, and show those that dont.
+		$(".skills.tag-cloud a.tag-cat").each(function(){
+			var inFiltered;
+			for (var i = 0; i < TechFiltersList.length; ++i) {
+				// Check if a tag cloud tag is in TechFiltersList
+				if ( $(this).hasClass("tag-cat-"+TechFiltersList[i]) ) {
+					inFiltered = 1;
+				}
+			}
+			for (var j = 0; j < ExpFiltersList.length; ++j) {
+				// Check if a tag cloud tag is in ExpFiltersList
+				if ( $(this).hasClass("tag-cat-"+ExpFiltersList[j]) ) {
+					inFiltered = 1;
+				}
+			}
+			if (inFiltered === 1) {
+				$(this).hide("fast");
+			} else {
+				$(this).show();
+			}
+		});
 	});
 	
-	// Reset the tag cloud and filters when pull-down is closed
-	$('#skills-section .fa-angle-double-up').on("click", function () {
-		// Reset the filter buttons
-		$(".tag-cloud."+cloudid+" .fa-square").removeClass("filter-sel-off");
-		$(".tag-cloud."+cloudid+" .fa-square").removeClass("not-available");
-		
-		// Reset filter titles
-		$(".filter-title-box ."+cloudid+".prefix .tag-cat").hide(0);
-		$(".filter-title-box ."+cloudid+".filter-title").show(0);
-		
-		// Remove filtering from the Skills tag cloud
-		$(".tag-cloud."+cloudid+" a.tag-cat").show("fast");
-		
-		// Reset filter lists
-		colorFiltersList = [];
-		sizeFiltersList = [];
-		
-		// Reset lists of available filter selections
-		colorTagsAvailable = [];
-		sizeTagsAvailable = [];
+	
+	
+	// Show filter select-all button on hover
+	jQuery( ".filter-box" ).hover(function() {
+		jQuery(this).find("i.fa-check-square-o").removeClass('hide');
+	},
+	function() {
+		jQuery(this).find("i.fa-check-square-o").addClass('hide');
 	});
+	
+	
+    $(".filter-box i.fa-check-square-o").click(function(){
+		var clicks = $(this).data('clicks');
+		if (clicks) {
+			// Check all checkboxes in this group
+			$(this).closest(".filter-box").find("input:checkbox").prop('checked', true);
+			// Set opacity on this button
+			$(this).css('opacity', '1');
+			// Update the filter list
+			var filterid = $(this).closest(".filter-box").prop("id");
+			if ( filterid === "tech-area-filter" ) { 
+				TechFiltersList = [];
+			} else if ( filterid === "experience-filter" ) {
+				ExpFiltersList = [];
+			}
+		} else {
+			// Uncheck all checkboxes in this group
+			$(this).closest(".filter-box").find("input:checkbox").prop('checked', false);
+			// Set opacity on this button
+			$(this).css('opacity', '0.5');
+			// Update the filter lists
+			var filterid = $(this).closest(".filter-box").prop("id");
+			if ( filterid === "tech-area-filter" ) { 
+				TechFiltersList = [];
+				$(this).closest(".filter-box").find('input:checkbox').each(function() {
+					var techvalue = $(this).val();
+					TechFiltersList.push(techvalue);
+				});
+			} else if ( filterid === "experience-filter" ) {
+				ExpFiltersList = [];
+				$(this).closest(".filter-box").find('input:checkbox').each(function() {
+					var expvalue = $(this).val();
+					ExpFiltersList.push(expvalue);
+				});
+			}
+		}
+		$(this).data("clicks", !clicks);
+		
+		
+		// Hide tag cloud tags that match the ExpFiltersList, and show those that dont.
+		$(".skills.tag-cloud a.tag-cat").each(function(){
+			var inFiltered;
+			for (var i = 0; i < TechFiltersList.length; ++i) {
+				// Check if a tag cloud tag is in TechFiltersList
+				if ( $(this).hasClass("tag-cat-"+TechFiltersList[i]) ) {
+					inFiltered = 1;
+				}
+			}
+			for (var j = 0; j < ExpFiltersList.length; ++j) {
+				// Check if a tag cloud tag is in ExpFiltersList
+				if ( $(this).hasClass("tag-cat-"+ExpFiltersList[j]) ) {
+					inFiltered = 1;
+				}
+			}
+			if (inFiltered === 1) {
+				$(this).hide("fast");
+			} else {
+				$(this).show();
+			}
+		});
+	});
+	
+	
 	
 	
 	/* *************************************************************

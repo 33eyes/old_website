@@ -2,6 +2,17 @@
    GENERAL STYLES 
 ****************************************************************/
 
+/* Custom font */
+/***	Font name:   Malina Brush Font
+		Font source: https://creativemarket.com/Abso1ut/511370-Malina-Brush-Font
+		Font author: Ivan Rosenberg - https://creativemarket.com/Abso1ut
+***/
+@font-face {
+	font-family: malina-brush-font;
+	src: url("../fonts/Malina-Brush-Font/Malina-Regular.otf"); /* IE9*/
+	src: url("../fonts/Malina-Brush-Font/Malina-Regular.ttf") format("truetype"); /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+}
+
 /* Utils */
 .show {
 	display:block;
@@ -12,9 +23,10 @@
 
 /* Bootstrap overwrites */
 h2 {
-    font-size: 36px;
-	font-family: 'Sniglet', cursive, sans-serif;
-    color: #292d56;
+    font-size: 3.5em;
+	font-family: malina-brush-font, 'Allura', sans-serif;
+    //color: #292d56;
+	color: #0e1877;
 }
 
 a, a:focus, a:hover {
@@ -24,12 +36,10 @@ a, a:focus, a:hover {
 
 /* General theme styles */
 body {
-    background-image: url("../img/backgrounds/purple_dots_bkgd.png"), url("../img/backgrounds/fade_bkgd.png"), url("../img/backgrounds/20161029_073351_crop1.jpg");
-    background-color: #000030;
-	background-size: 100%;
-	background-repeat: repeat, no-repeat, no-repeat;
-	background-attachment: fixed, scroll, scroll;
+    background-image: url("../img/backgrounds/worn_dots.png");
+    font-family: 'Open Sans', sans-serif;
 }
+
 
 /* Top offset */
 .main-top-margin {
@@ -38,12 +48,11 @@ body {
 
 /* Custom wells styles */
 .well-custom {
-	background-color: rgba(255, 255, 255, 0.7);
-	border-radius: 30px;
-	
+    background-color: rgb(255, 255, 255);
+    border-radius: 0;
     border-width: 0px;
     border-color: #9a9a9a;
-    box-shadow: 1px 3px 15px rgba(0, 0, 0, 0.5);
+    box-shadow: 1px 3px 14px rgba(169, 169, 169, 0.5);
 }
 @media (min-width: 992px) {
 	.well-custom {
@@ -56,6 +65,10 @@ body {
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
 }
 
+
+.section-text-container {
+    padding: 1em;
+}
 
 /***************************************************************
    FILTERS AND TAG CLOUD GENERAL STYLES 
@@ -92,13 +105,45 @@ a.pulldown-btn:focus, a.pulldown-btn:hover {
 
 /* General filters styles */
 .filter-box {
-	border: 2px solid rgba(121, 114, 128, 0.7);
-    margin: 0;
-    border-radius: 5px;
-    box-shadow: 1px 3px 15px rgba(162, 162, 162, 0.34);
-    width: 210px;
-    display: inline-block;
+    padding: 0 5px;
+    padding-bottom: 5px;
+    margin: 0 -5px;
+	margin-bottom: 15px;
 }
+.filter-box:hover {
+	border: 1px dashed #ccc;
+    padding-bottom: 4px;
+    margin-top: -1px;
+    margin-left: -6px;
+    margin-right: -6px;
+}
+
+.filter-box h3 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+.filter-box h3 i.fa-check-square-o {
+    float: right;
+    cursor: pointer;
+}
+
+.filter-box ul {
+    list-style-type: none;
+	padding-left: 0.5em;
+    font-size: 0.85em;
+    margin-bottom: 5px;
+}
+.filter-box ul li label {
+    font-weight: normal;
+    margin-bottom: 0;
+    cursor: pointer;
+}
+.filter-box ul li label input[type="checkbox"] {
+    margin-right: 7px;
+    cursor: pointer;
+}
+
 .filter-title-box {
 	border: 2px solid rgba(121, 114, 128, 0.7);
     background-color: #0b0f3c;
@@ -109,7 +154,7 @@ a.pulldown-btn:focus, a.pulldown-btn:hover {
 /* Filter box size for mobile */
 @media only screen and (max-device-width: 992px) {
 	.filter-box {
-	    width: 150px;
+//	    width: 150px;
 	}
 	.filter-title-box {
 		max-height: none;
@@ -187,8 +232,14 @@ div.cloud div.tag-cloud {
     text-align: center;
 }
 .tag-cloud a {
-    display: inline-block;
+	display: inline-block;
     padding: 0 0.3em;
+    color: #333;
+    margin: 5px;
+    background-color: rgba(219, 219, 219, 0.3);
+}
+.tag-cloud a:hover {
+	text-decoration: none;
 }
 
 
@@ -232,8 +283,7 @@ div.cloud div.tag-cloud {
 }
 
 #about-me-blurb {
-    font-size: 24px;
-    text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.76);
+    font-size: 1.35em;
 }
 
 /* Coder communities list styles */
@@ -244,15 +294,16 @@ div.cloud div.tag-cloud {
     margin-bottom: 0;
 }
 #coder-communities-list li {
-	display: inline;
+	display: inline-block;
+    margin: 0.25em;
 }
 @media (min-width: 992px) {
 	#coder-communities-list li {
-		margin-right: 1em;
+//		margin-right: 1em;
 	}
 }
 #coder-communities-list img {
-    vertical-align: top;
+    vertical-align: bottom;
 }
 #coder-communities-list i.fa {
 	font-size: 2.5em;
@@ -290,8 +341,13 @@ div.cloud div.tag-cloud {
 }
 
 #experience-filter {
-    width: 100px;
-	margin-top: 6px;
+    margin-right: -35px;
+    position: relative;
+    z-index: 10;
+}
+#experience-filter:hover {
+    margin-top: -6px;
+    margin-right: -36px;
 }
 
 /* SKILLS color filter colors */
@@ -690,7 +746,7 @@ div.carousel {
     bottom: 0.75em;
     right: 15%;
     text-decoration: none;
-	color: #7103ca;
+	color: #ccc;
     opacity: 0.7;
     font-size: 26px;
     padding: 10px;
@@ -708,8 +764,7 @@ div.carousel {
 }
 
 .go-top:hover {
-    color: #8e00ff;
+    color: #999;
     opacity: 0.7;
-    text-shadow: 1px 1px 10px rgb(134, 64, 189);
     text-decoration: none;
 }
