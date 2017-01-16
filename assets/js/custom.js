@@ -70,9 +70,18 @@ jQuery(function($) {
 		$(".tag-size-10").addClass("tag-cat-large");
 	});
 
-	
+	// SKILLS section filters
 	var TechFiltersList = [];
 	var ExpFiltersList = [];
+	
+	var ProjectsFilteredList = [];
+	$(document).ready(function() {
+		$("#projects-filter ul li label").find('input:checkbox').each(function(){ 
+			var initProjectvalue = $(this).val();
+			ProjectsFilteredList.push(initProjectvalue);
+		});
+	});
+	
     $(".filter-box ul li label").click(function(){
 		var filterid = $(this).closest(".filter-box").prop("id");
 		if ( filterid === "tech-area-filter" ) {
@@ -95,29 +104,80 @@ jQuery(function($) {
 			} else {
 				ExpFiltersList.push(expvalue);
 			}
+		} else if ( filterid === "projects-filter" ) {
+			// Update a list of project tech values to filter in
+			var projecttechvalue = $(this).find('input:checkbox').val();
+			if ( $(this).find('input:checkbox').is(':checked') ) { 
+				ProjectsFilteredList.push(projecttechvalue);
+			} else {
+				ProjectsFilteredList = jQuery.grep(ProjectsFilteredList, function(value) {
+					return value != projecttechvalue;
+				});
+			}
+			console.log("ProjectsFilteredList: " + ProjectsFilteredList);
 		}
 	
-		// Hide tag cloud tags that match the ExpFiltersList, and show those that dont.
-		$(".skills.tag-cloud a.tag-cat").each(function(){
-			var inFiltered;
-			for (var i = 0; i < TechFiltersList.length; ++i) {
-				// Check if a tag cloud tag is in TechFiltersList
-				if ( $(this).hasClass("tag-cat-"+TechFiltersList[i]) ) {
-					inFiltered = 1;
+		if ( (filterid === "tech-area-filter") || (filterid === "experience-filter") ) {
+			// Hide tag cloud tags that match either the TechFiltersList or the ExpFiltersList, and show those that dont.
+			$(".skills.tag-cloud a.tag-cat").each(function(){
+				var inFiltered;
+				for (var i = 0; i < TechFiltersList.length; ++i) {
+					// Check if a tag cloud tag is in TechFiltersList
+					if ( $(this).hasClass("tag-cat-"+TechFiltersList[i]) ) {
+						inFiltered = 1;
+					}
 				}
-			}
-			for (var j = 0; j < ExpFiltersList.length; ++j) {
-				// Check if a tag cloud tag is in ExpFiltersList
-				if ( $(this).hasClass("tag-cat-"+ExpFiltersList[j]) ) {
-					inFiltered = 1;
+				for (var j = 0; j < ExpFiltersList.length; ++j) {
+					// Check if a tag cloud tag is in ExpFiltersList
+					if ( $(this).hasClass("tag-cat-"+ExpFiltersList[j]) ) {
+						inFiltered = 1;
+					}
 				}
-			}
-			if (inFiltered === 1) {
-				$(this).hide("fast");
+				if (inFiltered === 1) {
+					$(this).hide("fast");
+				} else {
+					$(this).show();
+				}
+			});
+		} else if ( filterid === "projects-filter" ) {
+			// Show project cards that match the ProjectsFilteredList, and hide those that dont.
+			$("#project-cards .project-card").each(function(){
+				var showThisProjectCard = 0;
+				// Go through tech used on this project
+				$(this).find(".project-tech-used .projects-tag").each(function(){ 
+					// Get the tech-used- class on this project tag
+					var classes = $(this).attr('class').split(' ');
+					for (var i = 0; i < classes.length; i++) {
+						var matches = /^tech\-used\-(.+)/.exec(classes[i]);
+						if (matches != null) {
+							var projecttechusedclass = matches[1];
+						}
+					}
+					$(this).addClass("projects-sel-off");
+						
+					// Is it on the list of selected tech tags?
+					for (var i = 0; i < ProjectsFilteredList.length; i++) {
+						if (ProjectsFilteredList[i] === projecttechusedclass) {
+							showThisProjectCard = 1;
+							$(this).removeClass("projects-sel-off");
+						}
+					}
+				});
+				
+				// Hide or show this project card
+				if (showThisProjectCard === 1) {
+					$(this).show();
+				} else {
+					$(this).hide();
+				}
+			});
+			// Show the placeholder if all cards were filtered out.
+			if ( ProjectsFilteredList.length === 0 ) {
+				$("#project-placeholder").removeClass("hide");
 			} else {
-				$(this).show();
+				$("#project-placeholder").addClass("hide");
 			}
-		});
+		}
 	});
 	
 	
@@ -144,6 +204,12 @@ jQuery(function($) {
 				TechFiltersList = [];
 			} else if ( filterid === "experience-filter" ) {
 				ExpFiltersList = [];
+			} else if ( filterid === "projects-filter" ) {
+				ProjectsFilteredList = [];
+				$(this).closest(".filter-box").find('input:checkbox').each(function(){ 
+					var initProjectvalue = $(this).val();
+					ProjectsFilteredList.push(initProjectvalue);
+				});
 			}
 		} else {
 			// Uncheck all checkboxes in this group
@@ -164,32 +230,73 @@ jQuery(function($) {
 					var expvalue = $(this).val();
 					ExpFiltersList.push(expvalue);
 				});
+			} else if ( filterid === "projects-filter" ) {
+				ProjectsFilteredList = [];
 			}
 		}
 		$(this).data("clicks", !clicks);
 		
-		
-		// Hide tag cloud tags that match the ExpFiltersList, and show those that dont.
-		$(".skills.tag-cloud a.tag-cat").each(function(){
-			var inFiltered;
-			for (var i = 0; i < TechFiltersList.length; ++i) {
-				// Check if a tag cloud tag is in TechFiltersList
-				if ( $(this).hasClass("tag-cat-"+TechFiltersList[i]) ) {
-					inFiltered = 1;
+		if ( (filterid === "tech-area-filter") || (filterid === "experience-filter") ) {
+			// Hide tag cloud tags that match either the TechFiltersList or the ExpFiltersList, and show those that dont.
+			$(".skills.tag-cloud a.tag-cat").each(function(){
+				var inFiltered;
+				for (var i = 0; i < TechFiltersList.length; ++i) {
+					// Check if a tag cloud tag is in TechFiltersList
+					if ( $(this).hasClass("tag-cat-"+TechFiltersList[i]) ) {
+						inFiltered = 1;
+					}
 				}
-			}
-			for (var j = 0; j < ExpFiltersList.length; ++j) {
-				// Check if a tag cloud tag is in ExpFiltersList
-				if ( $(this).hasClass("tag-cat-"+ExpFiltersList[j]) ) {
-					inFiltered = 1;
+				for (var j = 0; j < ExpFiltersList.length; ++j) {
+					// Check if a tag cloud tag is in ExpFiltersList
+					if ( $(this).hasClass("tag-cat-"+ExpFiltersList[j]) ) {
+						inFiltered = 1;
+					}
 				}
-			}
-			if (inFiltered === 1) {
-				$(this).hide("fast");
+				if (inFiltered === 1) {
+					$(this).hide("fast");
+				} else {
+					$(this).show();
+				}
+			});
+		} else if ( filterid === "projects-filter" ) {
+			// Show project cards that match the ProjectsFilteredList, and hide those that dont.
+			$("#project-cards .project-card").each(function(){
+				var showThisProjectCard = 0;
+				// Go through tech used on this project
+				$(this).find(".project-tech-used .projects-tag").each(function(){ 
+					// Get the tech-used- class on this project tag
+					var classes = $(this).attr('class').split(' ');
+					for (var i = 0; i < classes.length; i++) {
+						var matches = /^tech\-used\-(.+)/.exec(classes[i]);
+						if (matches != null) {
+							var projecttechusedclass = matches[1];
+						}
+					}
+					$(this).addClass("projects-sel-off");
+						
+					// Is it on the list of selected tech tags?
+					for (var i = 0; i < ProjectsFilteredList.length; i++) {
+						if (ProjectsFilteredList[i] === projecttechusedclass) {
+							showThisProjectCard = 1;
+							$(this).removeClass("projects-sel-off");
+						}
+					}
+				});
+				
+				// Hide or show this project card
+				if (showThisProjectCard === 1) {
+					$(this).show();
+				} else {
+					$(this).hide();
+				}
+			});
+			// Show the placeholder if all cards were filtered out.
+			if ( ProjectsFilteredList.length === 0 ) {
+				$("#project-placeholder").removeClass("hide");
 			} else {
-				$(this).show();
+				$("#project-placeholder").addClass("hide");
 			}
-		});
+		}
 	});
 	
 	

@@ -30,9 +30,8 @@ h2 {
 }
 
 a, a:focus, a:hover {
-    color: #713aa9;
+    color: #333;
 }
-
 
 /* General theme styles */
 body {
@@ -142,6 +141,8 @@ a.pulldown-btn:focus, a.pulldown-btn:hover {
 .filter-box ul li label input[type="checkbox"] {
     margin-right: 7px;
     cursor: pointer;
+	vertical-align: bottom;
+    margin-top: 5px;
 }
 
 .filter-title-box {
@@ -384,6 +385,21 @@ div.cloud div.tag-cloud {
 /***************************************************************
    PROJECTS SECTION
 ****************************************************************/
+
+
+#projects-img {
+    margin-left: -20px;
+}
+
+.projects-tag {
+	padding: 0 0.3em;
+    color: #333;
+    margin: 3px 2px;
+    background-color: rgba(219, 219, 219, 0.3);
+    display: inline-block;
+}
+
+
 /* PROJECTS filter drop-down styles */
 .projects-tag.projects-sel-off {
     color: #808080;
@@ -447,11 +463,21 @@ div.cloud div.tag-cloud {
 
 /* Project card styles */
 .project-card {
+    border-radius: 0px;
+    background-color: white;
+    border: 5px solid #f4f4f4;
     padding: 5px;
+    margin-right: 10px;
+	box-shadow: none;
 }
+
 .project-card:hover, .project-card:active, .project-card:focus {
     background-color: white;
     box-shadow: 1px 3px 15px rgb(255, 255, 255);
+}
+
+.project-img-container {
+  //  width: 150px;
 }
 @media (min-width: 992px) {
 	.project-img-container {
@@ -465,11 +491,14 @@ div.cloud div.tag-cloud {
 }
 .project-summary img {
 	width: 100%;
-    border-radius: 5px;	
+    border: 1px solid #eee;
+    border-radius: 0;
 }
 .project-title {
-    margin-top: 0;
+	margin-top: 0;
     margin-bottom: 5px;
+    font-size: 1.5em;
+    font-weight: 600;
 }
 .project-tagline {
     margin-bottom: 7px;
@@ -482,6 +511,14 @@ div.cloud div.tag-cloud {
 	.project-summary-txt-container {
 		margin: 10px;
 	}
+}
+
+.read-more-btn {
+    display: inline-block;
+    padding: 1px 10px;
+    margin-top: 0.5em;
+    background-color: rgb(53, 59, 119);
+    color: white;
 }
 
 /* Project-card-expand content section styles */
@@ -626,6 +663,10 @@ div.carousel {
    CONTACT-ME SECTION
 ****************************************************************/
 
+#contact-img {
+    margin-top: 3em;
+}
+
 /* Professional networks list styles */
 #prof-networks-list {
 	list-style-type: none;
@@ -669,58 +710,61 @@ div.carousel {
 
 /* Email contact form styles */
 #send-message {
-	border: 2px solid rgba(121, 114, 128, 0.7);
-    padding: 5px;
-    border-radius: 10px;
+//	border: 2px solid rgba(121, 114, 128, 0.7);
+ //   padding: 5px;
+ //   border-radius: 10px;
 }
 #send-message h3 {
     margin-top: 5px;
 }
 
 #send-message .col-md-6.left, #send-message .col-md-6.right {
-	margin-top: 8px;
+//	margin-top: 8px;
 }
 	
 @media (min-width: 992px) {
 	#send-message .col-md-6.left {
-		padding-right: 3px;
+//		padding-right: 3px;
 	}
 	#send-message .col-md-6.right {
-		padding-left: 3px;
+//		padding-left: 3px;
 	}
 }
 
 
 
 #send-message .form-control {
-	border-radius: 10px;
-	background-color: #e8e8ec;
+	border-radius: 0;
+    background-color: white;
 }
 #send-message .form-control:focus {
-	background-color: white;
-    border-color: white;
-	box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.7);
+    border-color: #8e8c8c;
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
 }
 #message-box, #send-button {
 	margin-bottom: 0;
 }
 #message-box textarea.form-control {
-	min-height: 120px;
+    min-height: 116px;
 }
 #sender-name, #sender-email {
     margin-bottom: 8px;
 }
 #send-button button {
-    border-radius: 10px;
     width: 99%;
-	background-color: #400073;
-    color: #b3b3c1;
-    font-weight: bold;
     letter-spacing: 4px;
+	
+	padding: 1px 10px;
+    margin-top: 0.5em;
+    background-color: rgb(53, 59, 119);
+    color: white;
+    border-radius: 0;
 }
 #send-button button:hover {
-    color: white;
-    text-shadow: 1px 1px 10px rgba(255, 255, 255, 0.7);
+ //   color: white;
+ //   text-shadow: 1px 1px 10px rgba(255, 255, 255, 0.7);
 }
 
 
