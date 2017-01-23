@@ -95,6 +95,11 @@ body {
     margin-right: 20%;
 }
 
+/* Collapsed menu button */
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: white;
+}
+
 
 /****************************************************************
 4.0 Utility styles
