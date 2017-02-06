@@ -309,13 +309,14 @@ body {
 /* Front page, Projects section */
 @media (min-width: 560px) and (max-width: 1199px) {
 	#projects-section .section-part-1 {
-		width: 25%;
+		// width: 25%;
+		min-width: 132px;
 	}
 	#projects-section .section-part-2 {
-		display: none;
+		// display: none;
 	}
 	#projects-section .section-part-3 {
-		width: 75%;
+		// width: 75%;
 	}
 }
 /* Project cards */
@@ -483,6 +484,10 @@ body {
 
 
 /* 11.3 Projects ***********************************************/
+#projects-section-header p {
+	font-size: 1.35em;
+}
+
 
 #projects-img {
     margin-left: -20px;
@@ -541,7 +546,7 @@ body {
 
 @media only screen and (max-width : 991px) {
 	.project-summary-txt-container {
-		margin: 10px;
+	//	margin: 10px;
 	}
 }
 
